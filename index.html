@@ -18,31 +18,29 @@
     object-position:32% 50%;display:block;opacity:0;z-index:4;will-change:opacity}
   .grade{position:absolute;inset:0;pointer-events:none;
     background:radial-gradient(130% 95% at 50% 38%,transparent 42%,rgba(6,6,5,.62) 100%)}
-  /* üst menü şeridi — yarı şeffaf cam altın, alta doğru eriyor */
+  /* üst menü şeridi — yarı şeffaf gümüş cam, alta doğru eriyor */
   .topbar{position:absolute;z-index:8;top:0;left:0;right:0;display:flex;
     justify-content:space-between;align-items:center;
     padding:26px min(7vw,64px);
-    /* translucent altın katmanı — backdrop-blur ile arka plan süzülür */
+    /* translucent gümüş katmanı — tek tonlu, backdrop-blur ile arka plan süzülür */
     background:linear-gradient(180deg,
-      rgba(46,35,8,.42) 0%,
-      rgba(168,136,32,.62) 22%,
-      rgba(245,213,74,.7) 48%,
-      rgba(212,179,46,.55) 72%,
-      rgba(80,60,18,.18) 100%);
-    backdrop-filter:blur(16px) saturate(160%);
-    -webkit-backdrop-filter:blur(16px) saturate(160%);
+      rgba(198,202,210,.55) 0%,
+      rgba(178,182,190,.6) 55%,
+      rgba(150,154,162,.45) 100%);
+    backdrop-filter:blur(16px) saturate(120%);
+    -webkit-backdrop-filter:blur(16px) saturate(120%);
     border-bottom:0;
     font-family:system-ui,sans-serif;letter-spacing:.18em;font-size:13px;
     text-transform:uppercase;color:var(--ink);
     box-shadow:
-      inset 0 1px 0 rgba(255,250,200,.45),
-      0 18px 40px -18px rgba(60,42,8,.4)}
-  /* alt yumuşak geçiş — sert sınır yok, altın siteye dökülür */
+      inset 0 1px 0 rgba(240,242,246,.55),
+      0 18px 40px -18px rgba(40,44,52,.35)}
+  /* alt yumuşak geçiş — sert sınır yok, gümüş siteye dökülür */
   .topbar::after{content:"";position:absolute;
     left:0;right:0;bottom:-22px;height:22px;pointer-events:none;
     background:linear-gradient(180deg,
-      rgba(168,136,32,.22) 0%,
-      rgba(168,136,32,.08) 55%,
+      rgba(150,154,162,.22) 0%,
+      rgba(150,154,162,.08) 55%,
       transparent 100%)}
   .topbar nav{display:flex;gap:28px;font-size:11px;color:rgba(20,19,15,.78);font-weight:500}
   @media(max-width:680px){.topbar nav{display:none}}
@@ -55,7 +53,7 @@
   .brand-text{display:flex;flex-direction:column;gap:5px}
   .brand-name{font-size:20px;font-weight:600;letter-spacing:.22em;
     text-transform:uppercase;color:var(--ink)}
-  .brand-name em{font-style:italic;font-weight:500;color:#5c3f1a;
+  .brand-name em{font-style:italic;font-weight:500;color:#2a2d34;
     text-transform:lowercase;letter-spacing:.02em;font-size:18px;margin-left:4px}
   .brand-sub{font-family:system-ui,sans-serif;font-size:9.5px;letter-spacing:.36em;
     text-transform:uppercase;color:rgba(20,19,15,.62);font-weight:600}
