@@ -22,30 +22,28 @@
   .topbar{position:absolute;z-index:8;top:0;left:0;right:0;display:flex;
     justify-content:space-between;align-items:center;
     padding:28px min(7vw,64px);
-    /* katmanlı metalik altın: koyu kenarlar → parlak orta bant */
+    /* katmanlı metalik altın: koyu kenarlar → parlak orta bant (saf sarı altın) */
     background:
       /* en üst micro highlight */
-      linear-gradient(180deg,rgba(255,248,220,.55) 0%,transparent 6%),
+      linear-gradient(180deg,rgba(255,250,200,.6) 0%,transparent 6%),
       /* alt micro shadow */
-      linear-gradient(180deg,transparent 92%,rgba(40,26,8,.55) 100%),
-      /* ana metal sheen (dikey) */
+      linear-gradient(180deg,transparent 92%,rgba(35,28,6,.55) 100%),
+      /* ana metal sheen (dikey) — temiz sarı altın paleti */
       linear-gradient(180deg,
-        #6e4d1c 0%,
-        #a07535 14%,
-        #d4a945 38%,
-        #f3dc8a 52%,
-        #d4a945 66%,
-        #9a6d2f 86%,
-        #5c3f15 100%);
-    /* yatay hafif renk varyasyonu — pürüzsüz dökümün ışığa göre değişimi */
-    background-blend-mode:normal,normal,overlay;
-    background-color:#b8893a;
-    border-bottom:1px solid rgba(40,26,8,.45);
+        #2e2308 0%,
+        #8b701f 14%,
+        #d4b32e 36%,
+        #ffea7a 50%,
+        #f5d54a 62%,
+        #a88820 84%,
+        #2a1f06 100%);
+    background-color:#d4af37;
+    border-bottom:1px solid rgba(35,28,6,.5);
     font-family:system-ui,sans-serif;letter-spacing:.18em;font-size:13px;
     text-transform:uppercase;color:var(--ink);
     box-shadow:
-      inset 0 1px 0 rgba(255,248,220,.5),
-      inset 0 -1px 0 rgba(40,26,8,.35),
+      inset 0 1px 0 rgba(255,250,200,.55),
+      inset 0 -1px 0 rgba(35,28,6,.4),
       0 8px 22px rgba(0,0,0,.22)}
   .topbar nav{display:flex;gap:28px;font-size:11px;color:rgba(20,19,15,.78);font-weight:500}
   @media(max-width:680px){.topbar nav{display:none}}
