@@ -178,14 +178,14 @@
         rgba(176,141,87,.045) 50%,
         transparent 75%),
       linear-gradient(180deg,#1f1810 0%,#281d10 48%,#1a130b 100%);
-    padding:140px 6vw 180px;color:var(--sand);overflow:hidden;
+    padding:80px 6vw 140px;color:var(--sand);overflow:hidden;
     border-top:1px solid rgba(176,141,87,.18)}
   /* ince saten grain — fabric microstructure */
   .projects::before{content:"";position:absolute;inset:0;pointer-events:none;
     background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.65 0 0 0 0 0.38 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     opacity:.18;mix-blend-mode:overlay;z-index:0}
   .projects > *{position:relative;z-index:1}
-  .proj-head{max-width:760px;margin:0 auto 90px;text-align:center;
+  .proj-head{max-width:760px;margin:0 auto 32px;text-align:center;
     font-family:system-ui,sans-serif}
   .proj-head .kick{letter-spacing:.34em;font-size:12px;text-transform:uppercase;
     color:var(--bronze-2);margin:0 0 18px;font-weight:500;
@@ -200,7 +200,7 @@
   /* sahne */
   .gallery{position:relative;width:100%;display:flex;flex-direction:column;
     align-items:center}
-  .folder-stage{position:relative;width:440px;height:500px;
+  .folder-stage{position:relative;width:440px;height:380px;
     display:flex;justify-content:center;perspective:1400px}
   /* klasör arka panel */
   .folder-back{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);
@@ -238,12 +238,12 @@
   .gallery:not(.open) .folder-stage:hover .photo[data-i="4"]{transform:translate(60px,-50px)  rotate(16deg)  scale(.96)}
   /* açık durum — yatay sergi */
   .gallery.open .photo{cursor:pointer}
-  .gallery.open .photo[data-i="0"]{transform:translate(-300px,-170px) rotate(0) scale(1.05);z-index:50}
-  .gallery.open .photo[data-i="1"]{transform:translate(-150px,-170px) rotate(0) scale(1.05);z-index:50}
-  .gallery.open .photo[data-i="2"]{transform:translate(0,-170px)      rotate(0) scale(1.05);z-index:50}
-  .gallery.open .photo[data-i="3"]{transform:translate(150px,-170px)  rotate(0) scale(1.05);z-index:50}
-  .gallery.open .photo[data-i="4"]{transform:translate(300px,-170px)  rotate(0) scale(1.05);z-index:50}
-  .gallery.open .photo:hover{transform:translate(var(--tx,0),-180px) rotate(0) scale(1.1);z-index:60}
+  .gallery.open .photo[data-i="0"]{transform:translate(-300px,-60px) rotate(0) scale(1.05);z-index:50}
+  .gallery.open .photo[data-i="1"]{transform:translate(-150px,-60px) rotate(0) scale(1.05);z-index:50}
+  .gallery.open .photo[data-i="2"]{transform:translate(0,-60px)      rotate(0) scale(1.05);z-index:50}
+  .gallery.open .photo[data-i="3"]{transform:translate(150px,-60px)  rotate(0) scale(1.05);z-index:50}
+  .gallery.open .photo[data-i="4"]{transform:translate(300px,-60px)  rotate(0) scale(1.05);z-index:50}
+  .gallery.open .photo:hover{transform:translate(var(--tx,0),-72px) rotate(0) scale(1.1);z-index:60}
   .gallery.open .folder-back,
   .gallery.open .folder-front{opacity:0;pointer-events:none}
   /* tıklanabilir ön kapak */
@@ -256,10 +256,14 @@
     transition:transform .45s, opacity .5s;transform-origin:bottom center}
   .folder-front::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
     background:linear-gradient(90deg,transparent,rgba(202,169,121,.45),transparent)}
-  .folder-front .lbl{background:#000;color:rgba(246,241,231,.92);
-    padding:11px 22px;border-radius:8px;font-family:system-ui,sans-serif;
-    font-size:13px;letter-spacing:.08em;font-weight:500;
-    border:1px solid rgba(0,0,0,.8);box-shadow:inset 0 0 8px rgba(0,0,0,.6)}
+  .folder-front .lbl{display:inline-flex;align-items:center;gap:14px;
+    background:rgba(20,16,12,.7);color:var(--sand);
+    padding:11px 22px;border-radius:4px;font-family:system-ui,sans-serif;
+    font-size:11px;letter-spacing:.32em;font-weight:500;text-transform:uppercase;
+    border:1px solid rgba(202,169,121,.42);
+    box-shadow:inset 0 0 14px rgba(0,0,0,.6), 0 2px 8px rgba(0,0,0,.4)}
+  .folder-front .lbl::before,.folder-front .lbl::after{content:"";
+    display:inline-block;width:18px;height:1px;background:var(--bronze-2);opacity:.75}
   .gallery:not(.open) .folder-stage:hover .folder-front{
     transform:translateX(-50%) translateY(10px) rotateX(-22deg)}
   /* alt ipucu */
@@ -274,18 +278,18 @@
     .projects{padding:90px 5vw 120px}
     .proj-head{margin:0 auto 60px}
     .proj-head h2{font-size:clamp(28px,8vw,40px)}
-    .folder-stage{width:300px;height:400px}
+    .folder-stage{width:300px;height:310px}
     .folder-back{width:230px;height:170px;bottom:24px}
     .folder-back .tab{width:96px;height:34px}
     .photo-stack{width:160px;height:210px;bottom:48px}
     .photo{width:160px;height:210px}
     .folder-front{width:260px;height:130px;padding-bottom:22px;border-radius:16px}
     .folder-front .lbl{font-size:12px;padding:9px 18px}
-    .gallery.open .photo[data-i="0"]{transform:translate(-130px,-100px) rotate(-8deg) scale(.95)}
-    .gallery.open .photo[data-i="1"]{transform:translate(-65px,-120px)  rotate(-4deg) scale(1)}
-    .gallery.open .photo[data-i="2"]{transform:translate(0,-130px)      rotate(0)     scale(1.05)}
-    .gallery.open .photo[data-i="3"]{transform:translate(65px,-120px)   rotate(4deg)  scale(1)}
-    .gallery.open .photo[data-i="4"]{transform:translate(130px,-100px)  rotate(8deg)  scale(.95)}
+    .gallery.open .photo[data-i="0"]{transform:translate(-130px,-30px) rotate(-8deg) scale(.95)}
+    .gallery.open .photo[data-i="1"]{transform:translate(-65px,-50px)  rotate(-4deg) scale(1)}
+    .gallery.open .photo[data-i="2"]{transform:translate(0,-60px)      rotate(0)     scale(1.05)}
+    .gallery.open .photo[data-i="3"]{transform:translate(65px,-50px)   rotate(4deg)  scale(1)}
+    .gallery.open .photo[data-i="4"]{transform:translate(130px,-30px)  rotate(8deg)  scale(.95)}
     .gallery-hint{margin-top:40px;font-size:10px;padding:10px 20px}
   }
 </style></head><body>
@@ -357,7 +361,7 @@
         <div class="photo" data-i="4" style="background-image:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&amp;w=900&amp;auto=format&amp;fit=crop')"></div>
       </div>
       <button class="folder-front" id="folderFront" type="button" aria-label="Projeleri aç">
-        <span class="lbl">Projeler.gallery</span>
+        <span class="lbl">Proje Görselleri</span>
       </button>
     </div>
     <p class="gallery-hint">Kapatmak için herhangi bir fotoğrafa tıkla</p>
