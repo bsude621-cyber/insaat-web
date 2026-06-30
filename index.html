@@ -25,10 +25,28 @@
     border-bottom:1px solid #ece9e3;
     font-family:system-ui,sans-serif;letter-spacing:.18em;font-size:13px;
     text-transform:uppercase;color:var(--ink)}
-  .topbar b{font-weight:600;font-family:"Times New Roman",serif;letter-spacing:.04em;
-    font-size:18px;text-transform:none}
   .topbar nav{display:flex;gap:28px;font-size:11px;color:#6b675f}
   @media(max-width:680px){.topbar nav{display:none}}
+  /* marka kilidi */
+  .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);
+    font-family:"Times New Roman",serif;line-height:1}
+  .brand-mark{display:flex;align-items:center;color:var(--bronze);
+    padding-right:14px;border-right:1px solid #e6e0d2}
+  .brand-mark svg{display:block}
+  .brand-text{display:flex;flex-direction:column;gap:5px}
+  .brand-name{font-size:20px;font-weight:500;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--ink)}
+  .brand-name em{font-style:italic;font-weight:400;color:var(--bronze);
+    text-transform:lowercase;letter-spacing:.02em;font-size:18px;margin-left:4px}
+  .brand-sub{font-family:system-ui,sans-serif;font-size:9.5px;letter-spacing:.36em;
+    text-transform:uppercase;color:#8c8779;font-weight:500}
+  @media(max-width:680px){
+    .brand{gap:10px}
+    .brand-mark{padding-right:10px}
+    .brand-name{font-size:17px;letter-spacing:.2em}
+    .brand-name em{font-size:15px}
+    .brand-sub{font-size:8.5px;letter-spacing:.3em}
+  }
   /* sahneler */
   .stage{position:absolute;z-index:5;color:#f6f1e7;opacity:0;
     will-change:opacity,transform}
@@ -98,7 +116,19 @@
   <div class="grade"></div>
 
   <div class="topbar">
-    <b>EN AYAZ İNŞAAT</b>
+    <a class="brand" href="#top" aria-label="En Ayaz İnşaat — Anasayfa">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 30 30" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M4 26 L15 4 L26 26"/>
+          <path d="M9 18 L21 18"/>
+          <path d="M2 28 L28 28" stroke-width="1"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">En Ayaz<em>inşaat</em></span>
+        <span class="brand-sub">Mimarlık · Mühendislik</span>
+      </span>
+    </a>
     <nav><span>PROJELER</span><span>SÜREÇ</span><span>HAKKIMIZDA</span><span>İLETİŞİM</span></nav>
   </div>
 
