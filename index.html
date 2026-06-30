@@ -18,41 +18,36 @@
     object-position:32% 50%;display:block;opacity:0;z-index:4;will-change:opacity}
   .grade{position:absolute;inset:0;pointer-events:none;
     background:radial-gradient(130% 95% at 50% 38%,transparent 42%,rgba(6,6,5,.62) 100%)}
-  /* üst menü şeridi — animasyonlu altın mesh */
+  /* üst menü şeridi — cilalı altın metal şerit */
   .topbar{position:absolute;z-index:8;top:0;left:0;right:0;display:flex;
     justify-content:space-between;align-items:center;
     padding:28px min(7vw,64px);
-    background:linear-gradient(135deg,#6b4f23 0%,#a87f3d 28%,#d4af37 52%,#a87f3d 78%,#6b4f23 100%);
-    border-bottom:1px solid rgba(20,19,15,.22);
+    /* katmanlı metalik altın: koyu kenarlar → parlak orta bant */
+    background:
+      /* en üst micro highlight */
+      linear-gradient(180deg,rgba(255,248,220,.55) 0%,transparent 6%),
+      /* alt micro shadow */
+      linear-gradient(180deg,transparent 92%,rgba(40,26,8,.55) 100%),
+      /* ana metal sheen (dikey) */
+      linear-gradient(180deg,
+        #6e4d1c 0%,
+        #a07535 14%,
+        #d4a945 38%,
+        #f3dc8a 52%,
+        #d4a945 66%,
+        #9a6d2f 86%,
+        #5c3f15 100%);
+    /* yatay hafif renk varyasyonu — pürüzsüz dökümün ışığa göre değişimi */
+    background-blend-mode:normal,normal,overlay;
+    background-color:#b8893a;
+    border-bottom:1px solid rgba(40,26,8,.45);
     font-family:system-ui,sans-serif;letter-spacing:.18em;font-size:13px;
     text-transform:uppercase;color:var(--ink);
-    overflow:hidden;isolation:isolate;
-    box-shadow:0 8px 24px rgba(0,0,0,.18)}
-  .topbar::before,.topbar::after{content:"";position:absolute;inset:-80%;
-    pointer-events:none;z-index:-1;filter:blur(38px);will-change:transform}
-  .topbar::before{
-    background:
-      radial-gradient(circle at 22% 50%, rgba(245,227,163,.85), transparent 36%),
-      radial-gradient(circle at 70% 28%, rgba(212,175,55,.75), transparent 40%),
-      radial-gradient(circle at 48% 82%, rgba(107,80,40,.6), transparent 45%);
-    opacity:.95;
-    animation:gold-drift-a 18s ease-in-out infinite alternate}
-  .topbar::after{
-    background:
-      radial-gradient(circle at 80% 62%, rgba(255,238,180,.65), transparent 36%),
-      radial-gradient(circle at 18% 22%, rgba(184,134,68,.7), transparent 45%),
-      radial-gradient(circle at 62% 92%, rgba(82,58,24,.55), transparent 40%);
-    opacity:.85;
-    animation:gold-drift-b 24s ease-in-out infinite alternate}
-  @keyframes gold-drift-a{
-    0%  {transform:translate3d(-5%,-3%,0) rotate(0deg)   scale(1)}
-    100%{transform:translate3d(8%, 5%,0) rotate(18deg)   scale(1.15)}}
-  @keyframes gold-drift-b{
-    0%  {transform:translate3d(6%, 4%,0) rotate(0deg)    scale(1.1)}
-    100%{transform:translate3d(-7%,-5%,0) rotate(-22deg) scale(.95)}}
-  @media(prefers-reduced-motion:reduce){
-    .topbar::before,.topbar::after{animation:none}}
-  .topbar nav{display:flex;gap:28px;font-size:11px;color:rgba(20,19,15,.7)}
+    box-shadow:
+      inset 0 1px 0 rgba(255,248,220,.5),
+      inset 0 -1px 0 rgba(40,26,8,.35),
+      0 8px 22px rgba(0,0,0,.22)}
+  .topbar nav{display:flex;gap:28px;font-size:11px;color:rgba(20,19,15,.78);font-weight:500}
   @media(max-width:680px){.topbar nav{display:none}}
   /* marka kilidi */
   .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);
