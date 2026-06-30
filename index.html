@@ -159,9 +159,32 @@
     .hint{bottom:18px}
   }
   /* ---- PROJELER BÖLÜMÜ (interaktif klasör galerisi) ---- */
-  .projects{position:relative;background:linear-gradient(180deg,#0c0b0a 0%,#14130f 100%);
+  .projects{position:relative;
+    /* saten doku: üst halo + diyagonal saten parlaklığı + derin çikolata-bronz taban */
+    background:
+      radial-gradient(85% 55% at 50% 0%, rgba(214,178,124,.22) 0%, transparent 70%),
+      linear-gradient(108deg,
+        transparent 0%,
+        rgba(202,169,121,.06) 22%,
+        transparent 30%,
+        transparent 48%,
+        rgba(202,169,121,.085) 56%,
+        transparent 64%,
+        transparent 80%,
+        rgba(202,169,121,.05) 88%,
+        transparent 95%),
+      linear-gradient(72deg,
+        transparent 25%,
+        rgba(176,141,87,.045) 50%,
+        transparent 75%),
+      linear-gradient(180deg,#1f1810 0%,#281d10 48%,#1a130b 100%);
     padding:140px 6vw 180px;color:var(--sand);overflow:hidden;
     border-top:1px solid rgba(176,141,87,.18)}
+  /* ince saten grain — fabric microstructure */
+  .projects::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.65 0 0 0 0 0.38 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:.18;mix-blend-mode:overlay;z-index:0}
+  .projects > *{position:relative;z-index:1}
   .proj-head{max-width:760px;margin:0 auto 90px;text-align:center;
     font-family:system-ui,sans-serif}
   .proj-head .kick{letter-spacing:.34em;font-size:12px;text-transform:uppercase;
